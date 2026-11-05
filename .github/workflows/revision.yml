@@ -1,0 +1,19 @@
+# Revision de seguridad con herramientas gratuitas (gitleaks, semgrep, checkov, zizmor).
+# La logica vive en Juanoic/jc-software-factory-kit/.github/workflows/revision-seguridad.yml
+# Corre en cada PR, todos los lunes y a mano (pestaña Actions > Run workflow).
+# No corre en cada push a main para no gastar los 2000 minutos/mes del plan gratuito.
+name: Revision de seguridad
+
+on:
+  pull_request:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  revision:
+    uses: Juanoic/jc-software-factory-kit/.github/workflows/revision-seguridad.yml@main
