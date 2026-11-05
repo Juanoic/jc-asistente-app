@@ -1,0 +1,13 @@
+# Actualizaciones de dependencias (las de seguridad llegan aparte, apenas salen).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directories:
+      - "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    groups:
+      menores:
+        update-types: ["minor", "patch"]
